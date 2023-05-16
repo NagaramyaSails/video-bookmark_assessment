@@ -1,0 +1,10 @@
+<div class="form-container mt-5 p-5">
+  <h1 class="text-center">Login</h1>
+  <form [formGroup]="loginForm" (ngSubmit)="login()">
+    <input type="text" placeholder="Username" class="form-control m-3" formControlName="username"/>
+    <div *ngIf="username.touched && username.invalid" class="text-danger">Required*</div>
+    <input type="password" placeholder="Password" class="form-control m-3" formControlName="password"/>
+    <div *ngIf="password.touched && password.invalid" class="text-danger">Required*</div>
+    <button class="px-4 py-1 btn btn-primary" type="submit" >Login</button>
+  </form>
+</div>

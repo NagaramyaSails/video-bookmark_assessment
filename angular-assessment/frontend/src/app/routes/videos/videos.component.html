@@ -1,0 +1,28 @@
+<div class="container my-3">
+  <div class="row">
+    <div class="col-3 titlesContainer text-center">
+      <div *ngFor="let video of videos">
+        <button class="videoName bg-white m-2" (click)="playVideo(video)">
+          {{video.name}}
+        </button>
+      </div>
+    </div>
+    <div class="col-9">
+      <div class="video">
+        <div *ngIf="videoSelected">
+          <video [src]="videoSelected.url" controls autoplay #videoPlayer></video>
+        </div>
+      </div>
+      <div class="d-flex flex-row justify-content-end">
+        <button class="btn btn-secondary" (click)="saveBookmark()">+Bookmark</button>
+      </div>
+      <div *ngIf="bookmarks">
+        <h3>Bookmarks</h3>
+        <div *ngFor="let bm of bookmarks">
+          <button (click)="play(5.678712)" class="btn btn-warning">{{bm.timestamp}}</button>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
